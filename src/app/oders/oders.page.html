@@ -1,0 +1,21 @@
+<ion-card>
+  <ion-header>
+  <ion-toolbar>
+    <ion-title>Oders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card-content>
+  <p *ngFor= "let Info of newpoOrder">
+    Order Number{{Info.CID}}<br>
+   Oder name {{Info.namez}}<br>
+    Suger {{Info.sugar}}<br>
+   Milk {{Info.milk}}<br>
+    Order Quantity{{Info.quantity}}<br>
+    Total Price: R{{Info.price}}
+  </p>
+
+  <ion-button color="warning" [routerLink]="['/new-order']">Back</ion-button>
+  <ion-button color="warning" [routerLink]="['/home']">Home</ion-button>
+</ion-card-content>
+</ion-card>

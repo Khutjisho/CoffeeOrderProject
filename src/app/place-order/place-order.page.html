@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf ="CID">{{newOrder.Name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>
+  Order Number:<ion-input type="Number" [(ngModel)]="ID" value="" placeholder="Enter OrderNumber"></ion-input></p>
+<p>
+    <ion-radio-group (ionChange)= "getSugar($event)">
+        <ion-label>Sugar: </ion-label>
+               
+          <ion-label> One </ion-label>
+          <ion-radio value="1"></ion-radio>
+               
+            <ion-label> Two </ion-label>
+            <ion-radio value="2"></ion-radio>
+            
+            <ion-label> Three </ion-label>
+            <ion-radio value="3"></ion-radio>
+                
+            <ion-label> Four </ion-label>
+            <ion-radio value="4"></ion-radio>
+      
+
+    </ion-radio-group>
+  </p>
+
+<p>
+    <ion-radio-group (ionChange) = "getMilk($event)">
+        <ion-label>Milk: </ion-label>
+
+        <ion-label>Yes </ion-label>
+            <ion-radio value="Yes"></ion-radio>
+
+        <ion-label> No </ion-label>
+            <ion-radio value="No"></ion-radio>
+    </ion-radio-group>
+</p>
+
+<p>
+<ion-label>Quantity:</ion-label>
+          <ion-select (ionChange) = "getQuantity($event)">
+            <ion-select-option value= 1>1</ion-select-option>
+            <ion-select-option value =2>2</ion-select-option>
+            <ion-select-option value =3>3</ion-select-option>
+            <ion-select-option value=4>4</ion-select-option>
+            <ion-select-option value =5>5</ion-select-option>
+          </ion-select>
+</p>
+Total Price: R {{totalpricep}}<br>
+    <ion-button color="warning">Total Price</ion-button>
+    <ion-button color="warning" [routerLink]="['/oders']" (click)="PlaceOrder(); getTotalPrice()" >Place Order</ion-button>
+
+    <p>
+      
+    </p>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>NewOrder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p *ngFor = "let category of newcategories">
+
+    <img src = "../../assets/image/{{category.Cimage}}"><br>
+     {{category.Name}}
+    R{{category.Price}}
+    <ion-button color="warning" [routerLink]="['/place-order',category.CID]">Place Order</ion-button>
+  </p>
+</ion-content>
